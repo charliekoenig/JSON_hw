@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        function speak(prefix) {
+            name = document.getElementById("nameBox").value
+            alert(prefix + ' ' + name);
+        }
+    </script>
+    
+    <form>
+        <label>Name: <input type="text" id="nameBox"></label>
+        <br><br>
+        <button onclick="speak('Hello')">Hello</button>
+        <button onclick="speak('Goodbye')">Goodbye</button>
+        <button onclick="speak('Greetings')">Greetings</button>
+    </form>
+
+</body>

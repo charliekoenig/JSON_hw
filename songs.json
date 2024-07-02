@@ -1,0 +1,62 @@
+[
+    {
+        "title": "City With No Children",
+        "artist": "Arcade Fire",
+        "year": 2010,
+        "genres": ["Indie Rock"]
+    },
+    {
+        "title": "Uknowhowwedu",
+        "artist": "Bahamadia",
+        "year": 2018,
+        "genres": ["Hip-Hop", "Rap"]
+    },
+    {
+        "title": "Seventeen",
+        "artist": "Sjowgren",
+        "year": 2016,
+        "genres": ["Indie Pop"]
+    },
+    {
+        "title": "16",
+        "artist": "Baby Keem",
+        "year": 2022,
+        "genres": ["West Coast Hip-Hop", "Rap"]
+    },
+    {
+        "title": "REEL IT IN",
+        "artist": "Aminé",
+        "year": 2018,
+        "genres": ["Rap", "Hip-Hop"]
+    },
+    {
+        "title": "Neighbors",
+        "artist": "J. Cole",
+        "year": 2016,
+        "genres": ["Rap"]
+    },
+    {
+        "title": "Sundress",
+        "artist": "A$AP Rocky",
+        "year": 2022,
+        "genres": ["Hip-Hop"]
+    },
+    {
+        "title": "Untitled 08",
+        "artist": "Kendrick Lamar",
+        "year": 2016,
+        "genres": ["Hip-Hop", "Rap"]
+    },
+    {
+        "title": "Missed Connection",
+        "artist": "The Head And The Heart",
+        "year": 2019,
+        "genres": ["Alternative"]
+    },
+    {
+        "title": "Breakeven",
+        "artist": "The Script",
+        "year": 2008,
+        "genres": ["Pop Rock"]
+    }
+]
