@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous">
+    </script>
 
 </head>
 
@@ -13,38 +17,41 @@
     <div id="songList"></div>
     
     <script>
-        let songs;
-        let allGenres = [];
-    
-        $.get("songs.json", (data) => {  
-            songs = data;
-            
-            songs.forEach((song) => {
-                const genres = song.genres;
-                genres.forEach((genre) => {
-                    if (!allGenres.includes(genre)) {
-                        allGenres.push(genre);
-                        $("#genreOptions").append($("<option></option>").text(genre));
-                    }
+        $(document).ready(() => {
+
+            let songs;
+            let allGenres = [];
+        
+            $.get("songs.json", (data) => {  
+                songs = data;
+                
+                songs.forEach((song) => {
+                    const genres = song.genres;
+                    genres.forEach((genre) => {
+                        if (!allGenres.includes(genre)) {
+                            allGenres.push(genre);
+                            $("#genreOptions").append($("<option></option>").text(genre));
+                        }
+                    });
                 });
             });
-        });
-    
-        $("#filter").click(display);
-    
-        function display() {
-            let displaySongs = '';
-            let selectedGenre = $('#genreOptions').val();
-            if (selectedGenre) {
-                songs.forEach((song) => {
-                    if (song.genres.includes(selectedGenre)) {
-                        displaySongs += `
-                            ${song.title}<br>
-                        `;
-                    }
-                });
+        
+            $("#filter").click(display);
+        
+            function display() {
+                let displaySongs = '';
+                let selectedGenre = $('#genreOptions').val();
+                if (selectedGenre) {
+                    songs.forEach((song) => {
+                        if (song.genres.includes(selectedGenre)) {
+                            displaySongs += `
+                                ${song.title}<br>
+                            `;
+                        }
+                    });
+                }
+                $("#songList").html(displaySongs);
             }
-            $("#songList").html(displaySongs);
         }
     </script>
     
