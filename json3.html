@@ -5,19 +5,47 @@
 </head>
 
 <body>
+    <div style="display: flex;">
+        <select id="genreOptions"></select>
+        <button id="filter">Filter</button>
+    </div>
+    
+    <div id="songList"></div>
+    
     <script>
-        function speak(prefix) {
-            name = document.getElementById("nameBox").value
-            alert(prefix + ' ' + name);
+        let songs;
+        let allGenres = [];
+    
+        $.get("songs.json", (data) => {  
+            songs = data;
+            
+            songs.forEach((song) => {
+                const genres = song.genres;
+                genres.forEach((genre) => {
+                    if (!allGenres.includes(genre)) {
+                        allGenres.push(genre);
+                        $("#genreOptions").append($("<option></option>").text(genre));
+                    }
+                });
+            });
+        });
+    
+        $("#filter").click(display);
+    
+        function display() {
+            let displaySongs = '';
+            let selectedGenre = $('#genreOptions').val();
+            if (selectedGenre) {
+                songs.forEach((song) => {
+                    if (song.genres.includes(selectedGenre)) {
+                        displaySongs += `
+                            ${song.title}<br>
+                        `;
+                    }
+                });
+            }
+            $("#songList").html(displaySongs);
         }
     </script>
     
-    <form>
-        <label>Name: <input type="text" id="nameBox"></label>
-        <br><br>
-        <button onclick="speak('Hello')">Hello</button>
-        <button onclick="speak('Goodbye')">Goodbye</button>
-        <button onclick="speak('Greetings')">Greetings</button>
-    </form>
-
 </body>
