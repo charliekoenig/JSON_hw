@@ -9,10 +9,20 @@
 </head>
 
 <body>
+    <div id="songList"></div>
     <script>
         $.get( "songs.json",  (data) =>  {  
-            str = JSON.stringify(data);  
-            document.write(str);  
+            let songDisplay = '';
+
+            data.forEach((song) => {
+                songDisplay += `
+                    <div class="song">
+                        <div class="title">${song.title}</div>
+                        <br>
+                    </div>`
+            });
+    
+            $("#songList").html = songDisplay;
         });
     </script>
 
