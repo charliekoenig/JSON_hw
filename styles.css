@@ -1,0 +1,7 @@
+#header {
+    display: flex;
+}
+
+#header span,select,button {
+    margin-right: 5px;
+}
