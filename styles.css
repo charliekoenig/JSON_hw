@@ -1,7 +1,38 @@
 #header {
     display: flex;
+    justify-content: center;
+    margin: 30px;
 }
 
-#header span,select,button {
-    margin-right: 5px;
+#contentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    min-width: 450px;
+    min-height: 100px;
+    margin: 10vh auto 10px auto;
+}
+
+.content {
+    margin: auto 5px;
+    box-sizing: border-box;
+}
+
+#word {
+    width: 20%;
+    margin-right: 10px;
+    font-size: large;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#scrollButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.prev, .next {
+    margin: 5px;
 }
