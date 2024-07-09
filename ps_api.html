@@ -8,19 +8,19 @@
 <body>
 
     <div id="header">
-        <span>Select a website:</span>
-        <select id="siteNames">
-            <option>Google</option>
-            <option>Youtube</option>
-            <option>Facebook</option>
-            <option>Instagram</option>
-            <option>Twitter</option>
-            <option>Reddit</option>
-            <option>Yahoo</option>
-            <option>WhatsApp</option>
-        </select>
+        <input id="word"></input>
+        <button onclick="parseData()">Define</button>
+    </div>
 
-        <button onclick="getData()">Get Environmental Data</button>
+    <div id="contentContainer">
+        <div class="content" id="pS"><strong>Part of Speech: </strong></div>
+
+        <div class="content" id="def"><strong>Definition: </strong></div>
+    </div>
+
+    <div id="scrollButtons">
+        <button class="prev" onclick="prev()"><</button>
+        <button class="next" onclick="next()">></button>
     </div>
 
     <script src="script.js"></script>
